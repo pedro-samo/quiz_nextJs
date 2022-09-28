@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Botao from '../components/Botao';
 import Questao from '../components/Questao';
 import QuestaoModel from '../model/questao';
 import RespostaModel from '../model/resposta';
@@ -28,6 +29,7 @@ export default function Home() {
       style={{
         display: 'flex',
         height: '100vh',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
       }}
@@ -37,6 +39,7 @@ export default function Home() {
         respostaFornecida={respostaFornecida}
         tempoEsgotado={tempoEsgotado}
       />
+      <Botao texto="Próxima" href="/resultado" />
     </div>
   );
 }
