@@ -1,9 +1,21 @@
 import React from 'react';
 
+import styles from '../styles/Resultado.module.css';
+
+import { useRouter } from 'next/router';
+
 const resultado = () => {
+  const router = useRouter();
+  const total = +router.query.total;
+  const certas = +router.query.certas;
+  const percentual = Math.round((certas / total) * 100);
+
   return (
-    <div>
-      <h1>Resultado</h1>
+    <div className={styles.resulta}>
+      <h1>Resultado Final</h1>
+      <div>{total}</div>
+      <div>{certas}</div>
+      <div>{`${percentual}%`}</div>
     </div>
   );
 };
